@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#1C1D1F"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/i"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/nettext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/error"
+            android:textColor="#FFF"
+            android:lineHeight="25dp"
+            android:textSize="15sp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            tools:targetApi="p" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/restartapp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+       android:src="@drawable/reload"/>
+</RelativeLayout>

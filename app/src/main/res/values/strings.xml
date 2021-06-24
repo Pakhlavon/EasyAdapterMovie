@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VideoMovieAPP</string>
+    <string name="search">Поиск по названию филъма</string>
+    <string name="error">Нам не удалосъ обработатъ <br/> ваш запросю Попробуйте еще раз</string>
+    <string name="clicked">siz tugamani bosdingiz</string>
+    <string name="ok">ok </string>
+</resources>
