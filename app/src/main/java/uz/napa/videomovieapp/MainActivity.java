@@ -14,6 +14,7 @@ import android.graphics.ColorSpace;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -37,12 +38,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     List<ModelItem> modelItemList;
     private ArrayList<ModelItem> arraylist = new ArrayList<>();
    private EasyRecyclerAdapter adapter;
+   public static LinearLayout liner;
    public static TextView nodata;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        liner = findViewById(R.id.liner);
         nodata = findViewById(R.id.nodata);
         recyclerView = findViewById(R.id.recyclerview);
         simpleSearchView = findViewById(R.id.simpleSearchView);

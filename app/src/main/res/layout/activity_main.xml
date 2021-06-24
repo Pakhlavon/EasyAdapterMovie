@@ -13,6 +13,7 @@
         android:layout_margin="10dp"
         android:background="@drawable/search_back"
         android:iconifiedByDefault="false"
+        android:theme="@style/SearchView"
         android:queryHint="@string/search"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -25,17 +26,35 @@
         android:layout_marginTop="10dp"
         />
 
+    <LinearLayout
+        android:id="@+id/liner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        >
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_baseline_search_24"
+        android:scaleType="centerCrop"/>
+
+
     <TextView
         android:id="@+id/nodata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Data"
+        android:text=""
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone"
+        android:textSize="18sp"
         />
 
-
+    </LinearLayout>
 </RelativeLayout>

@@ -109,78 +109,27 @@ public class EasyRecyclerAdapter<T> extends BaseEasyRecyclerAdapter<T>{
         return modelItemList.size();
     }
 
-//    public void filter(String charText) {
-//        charText = charText.toLowerCase(Locale.getDefault());
-//        modelItemList.clear();
-//        if (charText.length() == 0) {
-//            modelItemList.addAll(arraylist);
-//        } else {
-//            for (ModelItem wp : arraylist) {
-//                if (wp.getTitle().toLowerCase(Locale.getDefault()).contains(charText)) {
-//                    modelItemList.add(wp);
-//                }
-//            }
-//        }
-//        notifyDataSetChanged();
-//    }
-
-
-
-
-//    @Override
-//    public Filter getFilter() {
-//        return new Filter() {
-//            @SuppressWarnings("unchecked")
-//            @Override
-//            protected void publishResults(CharSequence constraint, FilterResults results) {
-//                modelItemList = (List<ModelItem>) results.values;
-//                notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            protected FilterResults performFiltering(CharSequence constraint) {
-//                List<ModelItem> filteredResults =null;
-//                if (constraint.length() == 0) {
-//                    filteredResults = modelItemList;
-//                } else {
-//                    filteredResults = getFilteredResults(constraint.toString().toLowerCase());
-//                }
-//                FilterResults results = new FilterResults();
-//                results.values = filteredResults;
-//                return results;
-//            }
-//        };
-//    }
-//
-//
-//    protected List<ModelItem> getFilteredResults(String constraint) {
-//        List<ModelItem> results = new ArrayList<>();
-//
-//        for (ModelItem item : modelItemList) {
-//            if (item.getTitle().toLowerCase().contains(constraint)) {
-//                results.add(item);
-//            }
-//        }
-//        return results;
-//    }
-
     public void filter(CharSequence charSequence){
         ArrayList<ModelItem> tempArraylist = new ArrayList<>();
         if (!TextUtils.isEmpty(charSequence)){
+            MainActivity.liner.setVisibility(View.VISIBLE);
+            MainActivity.nodata.setText("По запросу " + "'" + charSequence +"'\n" + "ничего не найдено");
             for (ModelItem modelItem :modelItemList){
                 if (modelItem.getTitle().toLowerCase().contains(charSequence)){
                     tempArraylist.add(modelItem);
+                    MainActivity.liner.setVisibility(View.GONE);
                 }
             }
         }
         else {
             tempArraylist.addAll(arrayListcopy);
-            MainActivity.nodata.setVisibility(View.VISIBLE);
+            MainActivity.liner.setVisibility(View.GONE);
         }
         modelItemList.clear();
         modelItemList.addAll(tempArraylist);
         notifyDataSetChanged();
         tempArraylist.clear();
+
     }
 
 }
