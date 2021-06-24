@@ -66,10 +66,6 @@ public class MovieViewHolders extends ItemViewHolder<ModelItem> {
         super.onSetListeners();
     }
 
-    @Override
-    protected void clear() {
-
-    }
 
     public  interface MovieHolderListener{
         void onMovieImageClicked(ModelItem item);
