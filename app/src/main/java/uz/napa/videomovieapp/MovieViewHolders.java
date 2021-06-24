@@ -39,7 +39,6 @@ public class MovieViewHolders extends ItemViewHolder<ModelItem> {
     public MovieViewHolders(View view) {
         super(view);
     }
-
     @Override
     public void onSetValues(ModelItem item, PositionInfo positionInfo) {
         Glide
@@ -67,7 +66,13 @@ public class MovieViewHolders extends ItemViewHolder<ModelItem> {
         super.onSetListeners();
     }
 
+    @Override
+    protected void clear() {
+
+    }
+
     public  interface MovieHolderListener{
         void onMovieImageClicked(ModelItem item);
     }
+
 }
